@@ -1,0 +1,50 @@
+application: tcdesigncrew
+version: 1
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  script: index.php
+
+- url: /cms_hq.php
+  script: cms_hq.php
+
+- url: /title.php
+  script: title.php
+
+- url: /1.php
+  script: 1.php
+
+- url: /2.php
+  script: 2.php
+
+- url: /3.php
+  script: 3.php
+
+- url: /4.php
+  script: 4.php
+
+- url: /5.php
+  script: 5.php
+
+- url: /6.php
+  script: 6.php
+
+- url: /
+  script: /(.*\.php)
+
+- url: /(.*\.(gif|png|jpg|ico|js|bmp|css|otf|svg|woff|csv|xml|html))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|bmp|css|otf|svg|woff|csv|xml|html)) 
+
+- url: /(.*\.(ttf))
+  static_files: \1
+  upload: (.*\.(ttf))
+  mime_type: application/x-font-ttf
+
+- url: /(.*\.(ttf))
+  static_files: \1
+  upload: (.*\.(ttf))
+  mime_type: application/x-font-eot
